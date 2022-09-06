@@ -1,0 +1,47 @@
+<div class="w-screen h-screen bg-gray-700/50">
+  <p class="invisible">#</p>
+  <div class="max-w-3xl mx-auto px-4 py-1 bg-slate-50/75">
+
+    <p class="block mt-2 text-gray-900 text-2xl font-medium
+    ">Регистрация нового пользователя</p>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="mb-6">
+        <%= f.label 'email', class:"block mt-2 text-gray-900 text-lg font-medium" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"name@mail.com", required: true %>
+      </div>
+
+      <div class="mb-6">
+        <%= f.label 'Пароль', class:"block mt-2 text-gray-900 text-lg font-medium" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> символов минимум)</em>
+        <% end %>
+        <%= f.password_field :password, autocomplete: "new-password", class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"Пароль", required: true %>
+      </div>
+
+      <div class="mb-6">
+        <%= f.label 'Повторите пароль', class:"block mb-t text-gray-900  text-lg font-medium" %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"Подтверждение пароля", required: true %>
+      </div>
+
+      <div class="mb-6">
+        <%= f.label 'ФИО', class:"block mb-t text-gray-900  text-lg font-medium" %>
+        <%= f.text_field :fio, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"Фамилия Имя Отчество", required: true %>
+      </div>
+
+      <div class="mb-6">
+        <%= f.label 'Выбор вида пользователя:', class:"block mb-2 text-gray-900 text-lg font-medium" %>
+        <%= f.radio_button :repair, :value => true, :checked => true, class:"text-red-700" %> <span class="text-gray-900 text-lg font-medium">Ремонт и отделка</span>
+        <%= f.radio_button :construction, :value => true, class:"text-red-700" %> <span class="text-gray-900 text-lg font-medium">Малоэтажное строительство</span>
+      </div>
+
+
+      <div class="actions">
+        <%= f.submit "Зарегистрировать", class:"flex items-center justify-center p-3 font-medium text-left bg-red-700 hover:bg-red-600 text-white border border-transparent rounded-md shadow-sm focus:text-white mb-3" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>

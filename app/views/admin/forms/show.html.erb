@@ -1,0 +1,25 @@
+<div class="w-screen h-screen bg-gray-700/50">
+
+    <div class="max-w-7xl mx-auto flex items-center">
+        <%= link_to 'Вернуться к списку заявок', admin_index_path, class:"my-3 whitespace-nowrap text-lg font-medium text-red-700 hover:text-red-600" %>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 py-1 bg-slate-50/75">
+
+        <p class="mr-10 font-sans text-lg text-gray-900">ID: <%= @form.id %></p>
+        <p class="mr-10 font-sans text-lg text-gray-900">Статус: <%= @form.status %></p>
+        <p class="mr-10 font-sans text-lg text-gray-900">Время создания заявки: <%= @form.created_at %></p>
+        <p class="mr-10 font-sans text-lg text-gray-900">Время последней редакции заявки: <%= @form.updated_at %></p>
+        <p class="mr-10 font-sans text-lg text-gray-900">Эл.почта: <%= @form.email %></p>
+        <p class="mr-10 font-sans text-lg text-gray-900">Номер телефона: <%= @form.phone %></p>
+        <p class="mr-10 font-sans text-lg text-gray-900">Имя: <%= @form.name %></p>
+        <p class="mr-10 font-sans text-lg text-gray-900">Вид работ: <%= @form.variety %></p>
+        <p class="mr-10 font-sans text-lg text-gray-900">Описание требуемых работ и возможные вопросы:</p>
+        <p class="mr-10 font-sans text-lg text-gray-900"><%= @form.other %></p>
+
+    <div class="flex mt-3">
+        <%= link_to 'Редактировать', edit_admin_form_path(@form), class:"whitespace-nowrap text-lg font-medium text-red-700 hover:text-red-600" %>
+        <%= button_to 'Удалить', admin_form_path(@form), method: :delete, class:"ml-3 font-medium text-lg whitespace-nowrap text-gray-500 hover:text-gray-900" %>
+    </div>
+
+</div>

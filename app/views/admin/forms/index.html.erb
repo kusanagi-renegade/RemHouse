@@ -1,0 +1,25 @@
+<div class="w-full h-full bg-gray-700/50">
+
+	<p class="invisible">#</p>
+
+	<% @forms.each do |form| %>
+
+		<div class="max-w-7xl flex justify-between mx-auto px-4 py-1 bg-slate-50/75 mt-3">
+
+			<div class="flex justify-start mx-auto my-2">
+				<p class="mr-10 font-sans text-lg text-red-700"><%= form.status %></p>
+				<p class="mr-10 font-sans text-lg text-gray-900"><%= form.variety %></p>
+				<p class="mr-10 font-sans text-lg text-gray-900"><%= form.name %></p>
+				<p class="mr-10 font-sans text-lg text-gray-900"><%= form.phone %></p>
+				<p class="mr-10 font-sans text-lg text-gray-900"><%= form.updated_at %></p>
+			</div>
+
+			<div class="flex justify-end my-2">
+				<%= link_to 'Перейти к заявке', admin_form_path(form), class:"whitespace-nowrap border-2 rounded-lg outline-offset-2 border-red-700 text-lg font-medium text-red-700 hover:text-red-600" %>
+					
+			</div>
+
+		</div>
+	<% end %>
+
+</div>

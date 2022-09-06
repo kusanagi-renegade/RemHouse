@@ -1,0 +1,27 @@
+<div class="w-screen h-screen bg-gray-700/50">
+  <p class="invisible">#</p>
+  <div class="max-w-3xl mx-auto px-4 py-1 bg-slate-50/75">
+
+    <p class="block mt-2 text-gray-900 text-2xl font-medium
+    ">Вход</p>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="mb-6">
+        <%= f.label 'email', class:"block mt-2 text-gray-900 text-lg font-medium" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"name@mail.com", required: true, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"email", required: true %>
+      </div>
+
+      <div class="mb-6">
+        <%= f.label 'Повторите пароль', class:"block mb-t text-gray-900  text-lg font-medium" %>
+        <%= f.password_field :password, autocomplete: "current-password", class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"Пароль", required: true %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Войти", class:"flex items-center justify-center p-3 font-medium text-left bg-red-700 hover:bg-red-600 text-white border border-transparent rounded-md shadow-sm focus:text-white mb-3" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
+
+

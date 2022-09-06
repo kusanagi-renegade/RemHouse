@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RemHouse</title>
+    <meta charset="utf-8"  name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.4.7/dist/flowbite.min.css" />
+  </head>
+
+  <body class="w-screen h-screen bg-left bg-fixed bg-cover" 
+  style="background-image: url(<%= asset_path 'bg.jpg'%>);">
+
+    <div class="relative bg-white">
+      <div class="max-w-7xl mx-auto px-4 py-1 sm:px-6">
+        <div class="flex justify-between items-center border-b-2 border-gray-100 py-6">
+
+          <div class="flex justify-start lg:w-0 lg:flex-1">
+            <a href="/">
+            <%= image_tag("logo.jpg", class: "h-14 w-auto sm:h-14", alt: "REMHOUSE")%>
+            </a>
+            <p class="font-sans text-3xl text-gray-500 font-bold tracking-wide">REMHOUSE</p>
+            <p class="font-sans text-base text-gray-500 mx-2">ремонтно-отделочная компания в Вологде</p>
+          </div>
+
+          
+          <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+
+            <% if user_signed_in? %>
+
+              <% if current_user.admin? %>
+                <%= link_to 'Панель администрирования', admin_index_path, class:"whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900 px-4" %>
+              <% else %>
+
+                <% if current_user.repair? %>
+                  <%= link_to 'Панель администрирования', repair_index_path, class:"whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900 px-4" %>
+                <% end %>
+
+                <% if current_user.construction? %>
+                  <%= link_to 'Панель администрирования', construction_index_path, class:"whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900 px-4" %>
+                <% end %>
+                
+              <% end %>
+
+              <%= link_to ' Выход ', destroy_user_session_path, method: :delete, class:"ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-700 hover:bg-red-500" %>
+
+              <% if current_user.admin? %>
+                <%= link_to ' Регистрация ', new_user_registration_path, class:"ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-red-700 hover:bg-red-500" %>
+              <% end %>
+
+            <% else %>
+
+              <p class="font-sans text-2xl text-red-700 font-bold tracking-wide mx-5">8(8172)58-12-52</p>
+
+              <%= link_to ' Вход ', new_user_session_path, method: :delete, class:"whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900" %>
+
+            <% end %>
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <main class="container mx-auto">
+      <%= yield %>
+    </main>
+
+    <script src="https://unpkg.com/flowbite@1.4.5/dist/flowbite.js"></script>
+  </body>
+</html>

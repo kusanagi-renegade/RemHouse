@@ -1,0 +1,166 @@
+<div class="w-full h-full bg-gray-700/50">
+
+	<div class="max-w-7xl mx-auto px-4 py-1">
+
+		<div class="mt-20 flex justify-center"><p class="font-sans text-5xl text-white font-bold tracking-wide">МАСТЕРА НА ВСЕ РУКИ!</p></div>
+		<div class="mt-20 flex justify-center"><p class="font-sans text-xl text-white text-center">Свяжитесь с нами сейчас, чтобы получить<br> профессиональную консультацию!</p></div>
+
+
+		<div id="accordion-collapse" data-accordion="collapse" class="p-6 mt-2">
+
+			<div class="flex justify-center">
+				<h2 id="accordion-collapse-heading-1">
+				    <button type="button" class="flex items-center p-5 font-medium text-center bg-red-700 hover:bg-red-600 rounded-xl border border-transparent shadow-xl shadow-gray-700" data-accordion-target="#accordion-collapse-body-1" aria-expanded="false" aria-controls="accordion-collapse-body-1">
+					    <p class="text-2xl text-white"><span>Оставьте заявку на консультацию</span></p>
+					    <svg data-accordion-icon class="w-6 h-6 shrink-0 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+				    </button>
+				</h2>
+			</div>
+
+			<div class="flex justify-center mt-5">
+				<div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
+				    <div class="p-5">
+
+					    <%= form_for :form, url: forms_path do |f| %>
+
+							<div class="mb-6">
+						  		<%= f.label 'Ваш email', class:"block mb-2 text-gray-900 text-lg font-medium" %>
+								<%= f.text_field :email, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"name@mail.com", required: true %>
+							</div>
+
+							<div class="mb-6">
+								<%= f.label 'Ваш номер телефона', class:"block mb-2 text-gray-900 text-lg font-medium" %>
+								<%= f.text_field :phone, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"8 999 777 66 55", required: true %>
+							</div>
+
+							<div class="mb-6">
+								<%= f.label 'Ваше имя', class:"block mb-2 text-gray-900  text-lg font-medium" %>
+						    	<%= f.text_field :name, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"Имя", required: true %>
+							</div>
+
+							<div class="mb-6">
+								<%= f.label 'Выбор вида интересующих работ', class:"block mb-2 text-gray-900 text-lg font-medium" %>
+						 		<%= f.radio_button :variety, 'ремонт и отделка', :checked => true, class:"text-red-700" %> <span class="text-gray-900 text-lg font-medium">Ремонт и отделка</span>
+								<%= f.radio_button :variety, 'малоэтажное строительство', class:"text-red-700" %> <span class="text-gray-900 text-lg font-medium">Малоэтажное строительство</span>
+							</div>
+						  
+							<div class="mb-6">
+						    	<%= f.label 'Описание требуемых работ и возможные вопросы', class:"block mb-2 text-gray-900 text-lg font-medium" %>
+						    	<%= f.text_area :other, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" %>
+							</div>
+
+							<%= f.submit 'Оставить заявку', class:"flex items-center justify-center p-3 font-medium text-left bg-red-700 hover:bg-red-600 text-white border border-transparent rounded-md shadow-sm focus:text-white" %>
+
+						<% end %>
+
+				    </div>
+			    </div>
+			</div>
+		</div>
+
+		<div class="mt-3 flex justify-center">
+			<div class="mr-36">
+				<div>
+					<p class="font-sans text-3xl text-white font-medium" tracking-wide><span class="text-red-700">✓</span> укладка плитки</p>
+					<p class="font-sans text-3xl text-white font-medium" tracking-wide> <span class="text-red-700">✓</span> укладка ламината</p>
+					<p class="font-sans text-3xl text-white font-medium"><span class="text-red-700">✓</span> малярные работы</p>
+					<p class="font-sans text-3xl text-white font-medium tracking-wide"><span class="text-red-700">✓</span> замена сантехники</p>
+				</div>
+			</div>
+
+			<div class="ml-36">
+				<div>
+					<p class="font-sans text-3xl text-white font-medium tracking-wide"><span class="text-red-700">✓</span> заборы</p>
+					<p class="font-sans text-3xl text-white font-medium tracking-wide"><span class="text-red-700">✓</span> электрика</p>
+					<p class="font-sans text-3xl text-white font-medium tracking-wide"><span class="text-red-700">✓</span> фундаменты</p>
+					<p class="font-sans text-3xl text-white font-medium tracking-wide"><span class="text-red-700">✓</span> малоэтажное<br><span class="invisible">✓</span> строительство</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="flex max-w-7xl mx-auto px-4 py-1 bg-red-700 text-white text-center mt-16">
+
+		<div class="my-5">
+			<div class="grow-0 flex justify-center"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg></div>
+			<div class="mb-5"><p class="font-sans text-xl font-bold ">РАССЧЁТ СМЕТЫ</p></div>
+			<p class="font-sans text-lg text-gray-400">Произведём удалённо, если ключей пока нет</p>
+		</div>
+		<div class="my-5">
+			<div class="grow-0 flex justify-center"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20"></path></svg></div>
+			<div class="mb-5"><p class="font-sans text-xl font-bold">ПОМОЩЬ В ПРИЁМКЕ</p></div>
+			<p class="font-sans text-lg text-gray-400">Отправим специалиста, чтобы принять работу застройщика</p>
+		</div>
+		<div class="my-5">
+			<div class="grow-0 flex justify-center"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path></svg></div>
+			<div class="mb-5"><p class="font-sans text-xl font-bold">ЗАКУПКА МАТЕРИАЛОВ</p></div>
+			<p class="font-sans text-lg text-gray-400">Вам не придётя самим закупать и доставлять материалы</p>
+		</div>
+		<div class="my-5">
+			<div class="grow-0 flex justify-center"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg></div>
+			<div class="mb-5"><p class="font-sans text-xl font-bold">ГАРАНТИЯ ДО 3-Х ЛЕТ</p></div>
+			<p class="font-sans text-lg text-gray-400">Все дефекты, которые проявятся, устраним за свой счёт</p>
+		</div>
+
+	</div>
+
+	<div class="max-w-7xl mx-auto px-4 py-1 bg-slate-50/75">
+		<div class="my-10">
+
+			<div class="mb-5"><p class="font-sans text-5xl text-gray-500 font-bold tracking-wide">Наши работы:</p></div>
+			<div id="indicators-carousel" class="relative" data-carousel="static">
+			    <!-- Carousel wrapper -->
+			    <div class="overflow-hidden relative h-48 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+			         <!-- Item 1 -->
+			        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+			        	<%= image_tag("work1", class: "block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2") %>
+			        </div>
+			        <!-- Item 2 -->
+			        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+			            <%= image_tag("work2", class: "block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2") %>
+			        </div>
+			        <!-- Item 3 -->
+			        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+			            <%= image_tag("work3", class: "block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2") %>
+			        </div>
+			        <!-- Item 4 -->
+			        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+			            <%= image_tag("work4", class: "block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2") %>
+			        </div>
+			        <!-- Item 5 -->
+			        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+			            <%= image_tag("work5", class: "block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2") %>
+			        </div>
+			    </div>
+			    <!-- Slider indicators -->
+			    <div class="flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+			        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+			        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+			        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+			        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+			        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+			    </div>
+			    <!-- Slider controls -->
+			    <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+			        <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+			            <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+			            <span class="hidden">Назад</span>
+			        </span>
+			    </button>
+			    <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
+			        <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+			            <svg class="w-5 h-5 text-white sm:w-6 sm:h-6 dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+			            <span class="hidden">Вперёд</span>
+			        </span>
+			    </button>
+			</div>
+		</div>
+
+		<div class="my-10">
+			<div class="mb-5"><p class="font-sans text-5xl text-gray-500 font-bold tracking-wide">Мы на карте:</p></div>
+			<div class="flex justify-center"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1859.2465216046628!2d39.858094903160946!3d59.21241892208173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ae977c2e84d965%3A0x5b4fe46a17bd4bae!2z0JvQtdC90LjQvdCz0YDQsNC00YHQutCw0Y8sIDYx!5e0!3m2!1sru!2sru!4v1655582780113!5m2!1sru!2sru" width="1000" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+		</div>
+		
+	</div>
+</div>
+		

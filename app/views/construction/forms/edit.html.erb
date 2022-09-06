@@ -1,0 +1,53 @@
+<div class="w-full h-full bg-gray-700/50">
+
+	<div class="max-w-7xl mx-auto flex items-center">
+	    <div class="flex items-center border-b-2 border-gray-100">
+			<%= link_to 'Вернуться к списку заявок', construction_index_path, class:"my-3 whitespace-nowrap text-lg font-medium text-red-700 hover:text-red-600" %>
+			<%= link_to 'Вернуться к заявке', construction_form_path(@form), class:"ml-3 my-3 whitespace-nowrap text-lg font-medium text-red-700 hover:text-red-600" %>
+		</div>
+	</div>
+
+	<div class="max-w-7xl mx-auto px-4 py-1 bg-slate-50/75">
+		<%= form_for :form, url: construction_form_path, method: :patch do |f| %>
+
+			<div class="mb-6">
+				<%= f.label 'Выбор статуса заявки', class:"block mb-2 text-gray-900 text-lg font-medium" %>
+				<%= f.radio_button :status, 'На стадии ответа', :checked => true, class:"text-red-700" %> <span class="text-gray-900 text-lg font-medium">На стадии ответа</span>
+	    		<%= f.radio_button :status, 'На стадии выезда консультанта', class:"text-red-700" %> <span class="text-gray-900 text-lg font-medium">На стадии выезда консультанта</span>
+	    		<%= f.radio_button :status, 'На стадии составления договора', class:"text-red-700" %> <span class="text-gray-900 text-lg font-medium">На стадии составления договора</span>
+	    		<%= f.radio_button :status, 'Работы выплоняются', class:"text-red-700" %> <span class="text-gray-900 text-lg font-medium">Работы выплоняются</span>
+	    		<%= f.radio_button :status, 'Заказ закрыт', class:"text-red-700" %> <span class="text-gray-900 text-lg font-medium">Заказ закрыт</span>
+	    	</div>
+
+			<div class="mb-6">
+				<%= f.label 'Ваш email', class:"block mb-2 text-gray-900 text-lg font-medium" %>
+				<%= f.text_field :email, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"name@mail.com", required: true %>
+			</div>
+
+			<div class="mb-6">
+				<%= f.label 'Ваш номер телефона', class:"block mb-2 text-gray-900 text-lg font-medium" %>
+				<%= f.text_field :phone, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"8 999 777 66 55", required: true %>
+			</div>
+
+			<div class="mb-6">
+				<%= f.label 'Ваше имя', class:"block mb-2 text-gray-900  text-lg font-medium" %>
+				<%= f.text_field :name, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5", placeholder:"Имя", required: true %>
+			</div>
+
+			<div class="mb-6">
+				<%= f.label 'Выбор вида интересующих работ', class:"block mb-2 text-gray-900 text-lg font-medium" %>
+				<%= f.radio_button :variety, 'ремонт и отделка', :checked => true, class:"text-red-700" %> <span class="text-gray-900 text-lg font-medium">Ремонт и отделка</span>
+	    		<%= f.radio_button :variety, 'малоэтажное строительство', class:"text-red-700" %> <span class="text-gray-900 text-lg font-medium">Малоэтажное строительство</span>
+	    	</div>
+								  
+			<div class="mb-6">
+				<%= f.label 'Описание требуемых работ и возможные вопросы', class:"block mb-2 text-gray-900 text-lg font-medium" %>
+				<%= f.text_area :other, class:"bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5" %>
+			</div>
+
+			<%= f.submit 'Внести изменения', class:"flex items-center justify-center p-3 font-medium text-left bg-red-700 hover:bg-red-600 text-white border border-transparent rounded-md shadow-sm focus:text-white mb-3" %>
+
+		<% end %>
+	</div>
+
+</div>
